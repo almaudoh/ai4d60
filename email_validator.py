@@ -27,7 +27,7 @@ def is_valid_email(email: str) -> bool:
     - The domain (after ``@``) must contain at least one dot.
     - Each domain label must be 1-63 characters, contain only letters/digits
       or hyphens, and cannot start or end with a hyphen.
-    - The full domain length must be at most 255 characters.
+    - The full domain length must be at most 253 characters (DNS hostname limit).
     - The top-level domain must contain only letters and be at least 2
       characters long.
 
@@ -49,7 +49,7 @@ def is_valid_email(email: str) -> bool:
     if not local_part or not domain:
         return False
 
-    if len(local_part) > 64 or len(domain) > 255:
+    if len(local_part) > 64 or len(domain) > 253:
         return False
 
     if local_part.startswith(".") or local_part.endswith(".") or ".." in local_part:

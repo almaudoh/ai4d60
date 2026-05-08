@@ -49,5 +49,5 @@ def test_is_valid_email_rejects_too_long_local_part() -> None:
 def test_is_valid_email_rejects_too_long_domain() -> None:
     label = "a" * 63
     domain = ".".join([label, label, label, label, "com"])
-    assert len(domain) > 255
+    assert len(domain) > 253
     assert is_valid_email(f"user@{domain}") is False
