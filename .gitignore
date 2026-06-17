@@ -1,2 +1,6 @@
+.env
 .venv/
 venv/
+node_modules/
+grading_workspace/
+generated/
