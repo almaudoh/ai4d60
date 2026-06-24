@@ -4,3 +4,4 @@ venv/
 node_modules/
 grading_workspace/
 generated/
+pnpm-lock.yaml
